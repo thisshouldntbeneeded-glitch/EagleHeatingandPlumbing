@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Eagle Heating & Plumbing | Trusted Local Plumber</title>
+  <meta name="description" content="Eagle Heating & Plumbing offers emergency plumbing, boiler repairs, leaks, bathroom plumbing and heating services. Call 01480 473097 today." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta name="theme-color" content="#0f172a" />
+  <link rel="canonical" href="https://YOURDOMAIN.co.uk/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#07111f;
+      --panel:#0b1728;
+      --card:#0f1f36;
+      --text:#eaf2ff;
+      --muted:#b4c4dd;
+      --brand:#5aa7ff;
+      --brand2:#2dd4bf;
+      --line:rgba(255,255,255,.1);
+      --shadow:0 24px 70px rgba(0,0,0,.35);
+      --radius:26px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,sans-serif;
+      background:radial-gradient(circle at top,#10233f 0,var(--bg) 44%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(1160px,calc(100% - 32px));margin:0 auto}
+    .topbar{
+      position:sticky;top:0;z-index:30;
+      background:rgba(7,17,31,.78);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:14px 0;
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .logo{
+      width:46px;height:46px;border-radius:15px;
+      background:linear-gradient(135deg,var(--brand),var(--brand2));
+      display:grid;place-items:center;color:#04111f;font-weight:900;
+      box-shadow:var(--shadow);
+    }
+    .menu{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.95rem}
+    .cta{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      padding:12px 18px;border-radius:999px;font-weight:700;
+      border:1px solid var(--line);background:rgba(255,255,255,.04);
+    }
+    .btn.primary{
+      background:linear-gradient(135deg,var(--brand),var(--brand2));
+      color:#03131f;border:none;
+    }
+    .hero{padding:74px 0 22px}
+    .grid{
+      display:grid;grid-template-columns:1.15fr .85fr;gap:22px;align-items:stretch;
+    }
+    .kicker{
+      display:inline-flex;gap:8px;align-items:center;padding:8px 14px;
+      border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--line);
+      color:#d9e7ff;font-size:.94rem;
+    }
+    .hero h1{
+      font-size:clamp(2.4rem,5vw,5rem);
+      line-height:1.02;margin:18px 0 14px;
+    }
+    .hero p{color:var(--muted);font-size:1.08rem;max-width:62ch}
+    .pillrow{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0}
+    .pill{
+      padding:10px 14px;border-radius:999px;
+      background:rgba(255,255,255,.06);border:1px solid var(--line);
+      color:#d7e4fb;font-size:.95rem;
+    }
+    .card{
+      background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.03));
+      border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);
+    }
+    .heroCard{padding:24px}
+    .stats{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px;
+    }
+    .stat{
+      padding:16px;border-radius:20px;background:rgba(8,17,31,.55);border:1px solid var(--line);
+    }
+    .stat b{display:block;font-size:1.18rem}
+    .stat span{color:var(--muted);font-size:.92rem}
+    section{padding:22px 0 0}
+    .sectionTitle{font-size:1.8rem;margin:0 0 14px}
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .svc,.info,.contactBox,.faqItem{padding:22px}
+    .svc h3,.info h3,.contactBox h3{margin:.15rem 0 .5rem}
+    .svc p,.info p,.contactBox p,.faqItem p{color:var(--muted);margin:0}
+    .icon{
+      width:50px;height:50px;border-radius:16px;
+      background:rgba(90,167,255,.15);display:grid;place-items:center;
+      font-size:1.2rem;margin-bottom:14px;
+    }
+    .twoCol{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .list ul{margin:0;padding-left:18px;color:var(--muted)}
+    .locations{display:flex;flex-wrap:wrap;gap:10px}
+    .tag{
+      padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.05);
+      border:1px solid var(--line);color:#dbe7ff;font-size:.94rem;
+    }
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .form{display:grid;gap:12px}
+    .field{
+      padding:14px 16px;border-radius:16px;border:1px solid var(--line);
+      background:rgba(255,255,255,.04);color:var(--text)
+    }
+    .field::placeholder{color:#90a3c4}
+    textarea.field{min-height:140px;resize:vertical}
+    .faq{display:grid;gap:12px}
+    .faqItem details{
+      border:1px solid var(--line);border-radius:18px;background:rgba(255,255,255,.04);padding:16px 18px;
+    }
+    .faqItem summary{cursor:pointer;font-weight:700}
+    .faqItem p{padding-top:10px}
+    .stickybar{
+      position:fixed;left:0;right:0;bottom:0;background:rgba(7,17,31,.88);
+      backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px 0;z-index:40;
+    }
+    .stickybar .wrap{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+    footer{padding:28px 0 84px;color:var(--muted);font-size:.94rem}
+    .small{font-size:.92rem;color:var(--muted)}
+    @media (max-width:900px){
+      .grid,.services,.twoCol,.contact{grid-template-columns:1fr}
+      .menu{display:none}
+      .hero{padding-top:42px}
+      .stats{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:560px){
+      .stats{grid-template-columns:1fr}
+      .hero h1{font-size:2.35rem}
+      .cta,.pillrow{width:100%}
+      .btn{flex:1;text-align:center}
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "Eagle Heating & Plumbing",
+    "telephone": "+441480473097",
+    "email": "rjb44.eagle@sky.com",
+    "url": "https://YOURDOMAIN.co.uk/",
+    "priceRange": "££",
+    "areaServed": ["Cambridgeshire","Huntingdonshire","UK"],
+    "description": "Emergency plumbing, boiler repairs, leaks, bathroom plumbing and heating services.",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <div class="brand">
+        <div class="logo">E</div>
+        <div>
+          <div>Eagle Heating & Plumbing</div>
+          <div class="small">Reliable local plumber</div>
+        </div>
+      </div>
+      <nav class="menu" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/services.html">Services</a>
+        <a href="/areas.html">Areas</a>
+        <a href="/about.html">About</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+      <div class="cta">
+        <a class="btn" href="tel:01480473097">Call 01480 473097</a>
+        <a class="btn primary" href="mailto:rjb44.eagle@sky.com">Email us</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap grid">
+        <div>
+          <span class="kicker">Emergency plumbing • Boiler repairs • Fast response</span>
+          <h1>Trusted plumbing and heating for homes that need help now.</h1>
+          <p>Eagle Heating & Plumbing provides practical, reliable support for leaks, boiler faults, heating issues, bathrooms, taps, toilets and general plumbing work. We make it easy to get a quick answer and a tidy job done properly.</p>
+          <div class="pillrow">
+            <span class="pill">Emergency plumber</span>
+            <span class="pill">Boiler repairs</span>
+            <span class="pill">Leak detection</span>
+            <span class="pill">Bathroom plumbing</span>
+          </div>
+          <div class="cta">
+            <a class="btn primary" href="tel:01480473097">Call 01480 473097</a>
+            <a class="btn" href="/contact.html">Request a quote</a>
+          </div>
+        </div>
+        <aside class="card heroCard">
+          <h2 class="sectionTitle">Why choose us</h2>
+          <p class="small">A straightforward service built on reliability, clear communication and good workmanship.</p>
+          <div class="stats">
+            <div class="stat"><b>Fast</b><span>Quick call handling and practical scheduling.</span></div>
+            <div class="stat"><b>Trusted</b><span>Friendly service with tidy, careful work.</span></div>
+            <div class="stat"><b>Local</b><span>Serving nearby homes and businesses.</span></div>
+            <div class="stat"><b>Clear</b><span>No jargon, no fuss, just help.</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="sectionTitle">Core services</h2>
+        <div class="services">
+          <article class="card svc">
+            <div class="icon">🔧</div>
+            <h3>General plumbing</h3>
+            <p>Fixing leaks, replacing taps, repairing pipework, toilets, cisterns, overflows and everyday plumbing issues.</p>
+          </article>
+          <article class="card svc">
+            <div class="icon">🔥</div>
+            <h3>Heating & boiler work</h3>
+            <p>Help with heating faults, boiler issues and keeping your system working efficiently and safely.</p>
+          </article>
+          <article class="card svc">
+            <div class="icon">💧</div>
+            <h3>Emergency callouts</h3>
+            <p>Fast help for burst pipes, active leaks and urgent problems that need attention as soon as possible.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap twoCol">
+        <article class="card info">
+          <h2 class="sectionTitle">Service pages for SEO</h2>
+          <p>Create dedicated pages for each main service so Google can match you with more specific searches. That helps with local intent and gives you more chances to rank for searches like boiler repair, emergency plumber and bathroom plumbing.</p>
+          <ul>
+            <li>/services.html</li>
+            <li>/boiler-repair.html</li>
+            <li>/emergency-plumber.html</li>
+            <li>/bathroom-plumbing.html</li>
+            <li>/areas.html</li>
+          </ul>
+        </article>
+        <article class="card info">
+          <h2 class="sectionTitle">Service areas</h2>
+          <p>List the towns and villages you actually serve, then repeat them naturally across your pages, footer and contact page.</p>
+          <div class="locations">
+            <span class="tag">Cambridgeshire</span>
+            <span class="tag">Huntingdon</span>
+            <span class="tag">St Ives</span>
+            <span class="tag">St Neots</span>
+            <span class="tag">Peterborough</span>
+            <span class="tag">Ely</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap twoCol">
+        <article class="card faqItem">
+          <h2 class="sectionTitle">FAQ</h2>
+          <details><summary>Do you offer emergency plumbing?</summary><p>Yes — this page is set up to make emergency calls and urgent jobs easy to find and contact.</p></details>
+          <details><summary>Can I add more locations?</summary><p>Yes — add real service areas only, and create a page for each important location if needed.</p></details>
+          <details><summary>What helps SEO most?</summary><p>Clear service pages, strong page titles, location targeting, Google Business Profile, and consistent contact details across the site.</p></details>
+        </article>
+        <article class="card faqItem">
+          <h2 class="sectionTitle">Contact</h2>
+          <p><strong>Phone:</strong> <a href="tel:01480473097">01480 473097</a></p>
+          <p><strong>Email:</strong> <a href="mailto:rjb44.eagle@sky.com">rjb44.eagle@sky.com</a></p>
+          <p class="small">Replace the placeholder domain and add your real address, opening hours and reviews as soon as you can.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© <span id="y"></span> Eagle Heating & Plumbing. All rights reserved.</div>
+  </footer>
+
+  <div class="stickybar">
+    <div class="wrap">
+      <a class="btn primary" href="tel:01480473097">Call now</a>
+      <a class="btn" href="mailto:rjb44.eagle@sky.com">Email quote</a>
+      <a class="btn" href="/contact.html">Contact page</a>
+    </div>
+  </div>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
