@@ -54,8 +54,8 @@
       min-width:0;
     }
     .logo-wrap{
-      width:46px;
-      height:46px;
+      width:50px;
+      height:50px;
       border-radius:14px;
       overflow:hidden;
       flex:none;
@@ -136,8 +136,9 @@
 
     .heroVisual{
       position:relative;
-      aspect-ratio:16 / 9;
-      min-height:360px;
+      aspect-ratio:16 / 10;
+      min-height:280px;
+      max-height:360px;
       border-radius:34px;
       overflow:hidden;
       border:1px solid var(--line);
@@ -159,10 +160,14 @@
       backdrop-filter:blur(8px);
     }
     .heroOverlay{
-      position:absolute;left:18px;right:18px;bottom:18px;z-index:2;
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:18px;
+      z-index:2;
       display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:14px;
+      grid-template-columns:1.25fr .75fr;
+      gap:12px;
       align-items:end;
     }
     .heroCard{
@@ -191,6 +196,7 @@
     .thumbGrid{
       display:grid;
       gap:12px;
+      align-self:end;
     }
     .thumbGrid a{
       display:block;
@@ -215,6 +221,7 @@
     }
 
     section{padding:22px 0 0}
+    section.gallery-section{margin-top:24px}
     .sectionTitle{
       font-size:1.85rem;margin:0 0 14px;
       letter-spacing:-.02em;
@@ -357,7 +364,7 @@
     @media (max-width: 980px){
       .heroGrid,.services,.split,.contactGrid{grid-template-columns:1fr}
       .menu{display:none}
-      .heroVisual{min-height:620px}
+      .heroVisual{min-height:360px}
       .heroOverlay{grid-template-columns:1fr}
       .stats{grid-template-columns:1fr 1fr}
       .galleryRow{grid-template-columns:1fr 1fr 1fr}
@@ -371,12 +378,15 @@
       .stats{grid-template-columns:1fr}
       .btn{flex:1;text-align:center}
       .cta{width:100%}
-      .heroVisual{min-height:700px}
+      .heroVisual{
+        min-height:260px;
+        aspect-ratio:16 / 9;
+      }
       .heroOverlay{left:14px;right:14px;bottom:14px}
       .heroCard{padding:18px}
       .lightbox{padding:14px}
       .close{top:10px;right:10px}
-      .logo-wrap{width:50px;height:50px}
+      .logo-wrap{width:46px;height:46px}
     }
   </style>
 </head>
@@ -474,7 +484,7 @@
       </div>
     </section>
 
-    <section>
+    <section class="gallery-section">
       <div class="wrap">
         <h2 class="sectionTitle">Recent work</h2>
         <div class="galleryRow">
