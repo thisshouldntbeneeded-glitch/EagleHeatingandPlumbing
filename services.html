@@ -7,6 +7,7 @@
   <meta name="description" content="Explore the plumbing and heating services offered by Eagle Heating & Plumbing in St Neots and surrounding areas." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://YOURDOMAIN.co.uk/services.html" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body{margin:0;font-family:Inter,system-ui,sans-serif;background:#06111e;color:#eef5ff;line-height:1.6}
     a{color:inherit;text-decoration:none}
@@ -19,7 +20,13 @@
     .lead{color:#b7c8df;max-width:70ch}
     .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px}
     .card{background:#0f2138;border:1px solid rgba(255,255,255,.08);border-radius:22px;padding:22px}
-    .btn{display:inline-block;margin-top:18px;padding:12px 18px;border-radius:999px;background:linear-gradient(135deg,#4aa3ff,#39d5c2);color:#021019;font-weight:700}
+    .icon{
+      width:54px;height:54px;border-radius:18px;
+      background:rgba(74,163,255,.14);
+      display:grid;place-items:center;
+      font-size:1.25rem;margin-bottom:14px;
+      border:1px solid rgba(255,255,255,.10);
+    }
     .small{color:#b7c8df;font-size:.95rem}
     @media (max-width:900px){.grid{grid-template-columns:1fr}}
   </style>
@@ -28,15 +35,23 @@
   <header><div class="wrap top"><strong>Eagle Heating & Plumbing</strong><nav><a href="/">Home</a><a href="/services.html">Services</a><a href="/areas.html">Areas</a><a href="/gallery.html">Gallery</a><a href="/about.html">About</a><a href="/contact.html">Contact</a></nav></div></header>
   <main class="wrap">
     <h1>Services</h1>
-    <p class="lead">The business focuses on practical domestic plumbing and heating work for St Neots and nearby areas.</p>
+    <p class="lead">Practical domestic plumbing and heating services, presented clearly and simply.</p>
     <div class="grid">
-      <article class="card"><h2>General plumbing</h2><p class="small">Taps, toilets, leaks, pipework, overflows and everyday plumbing issues.</p></article>
-      <article class="card"><h2>Heating support</h2><p class="small">Heating faults, boiler-related issues and help with system performance.</p></article>
-      <article class="card"><h2>Emergency help</h2><p class="small">Fast response for burst pipes, active leaks and urgent plumbing problems.</p></article>
-    </div>
-    <div class="card" style="margin-top:18px">
-      <h2>Best use of this page</h2>
-      <p class="small">This page is here to help customers understand the business quickly and to give the site a proper structure. Keep each service description simple, honest and local.</p>
+      <article class="card">
+        <div class="icon">🔧</div>
+        <h2>General plumbing</h2>
+        <p class="small">Leaks, taps, toilets, pipework, overflows and everyday plumbing issues.</p>
+      </article>
+      <article class="card">
+        <div class="icon">🔥</div>
+        <h2>Heating support</h2>
+        <p class="small">Heating faults, boiler-related issues and practical help for homes.</p>
+      </article>
+      <article class="card">
+        <div class="icon">💧</div>
+        <h2>Emergency help</h2>
+        <p class="small">Fast response for burst pipes, leaks and urgent plumbing problems.</p>
+      </article>
     </div>
   </main>
   <footer><div class="wrap">© <span id="y"></span> Eagle Heating & Plumbing.</div></footer>
