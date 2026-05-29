@@ -15,8 +15,6 @@
     :root{
       --bg:#05111d;
       --bg2:#09192b;
-      --panel:#0d2036;
-      --card:#10243d;
       --text:#eef5ff;
       --muted:#b7c8df;
       --brand:#4aa3ff;
@@ -43,7 +41,7 @@
 
     .topbar{
       position:sticky;top:0;z-index:40;
-      background:rgba(5,17,29,.86);
+      background:rgba(5,17,29,.90);
       backdrop-filter:blur(16px);
       border-bottom:1px solid var(--line);
     }
@@ -53,14 +51,38 @@
     }
     .brand{
       display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px;
+      min-width:0;
     }
-    .logo{
-      width:50px;height:50px;border-radius:16px;
-      background:linear-gradient(135deg,var(--brand),var(--brand2));
-      box-shadow:var(--shadow);
-      display:grid;place-items:center;overflow:hidden;flex:none;
+    .logo-wrap{
+      width:40px;
+      height:40px;
+      border-radius:12px;
+      overflow:hidden;
+      flex:none;
+      display:grid;
+      place-items:center;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
     }
-    .mark{width:100%;height:100%;display:block}
+    .site-logo{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+    }
+    .brandText{min-width:0}
+    .brandText div:first-child{
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
+    .brandText div:last-child{
+      color:var(--muted);
+      font-size:.92rem;
+      white-space:nowrap;
+      overflow:hidden;
+      text-overflow:ellipsis;
+    }
     .menu{
       display:flex;gap:18px;flex-wrap:wrap;
       color:var(--muted);
@@ -77,10 +99,7 @@
       color:#021019;border:none;
     }
 
-    .hero{
-      position:relative;
-      padding:18px 0 24px;
-    }
+    .hero{padding:18px 0 24px}
     .heroGrid{
       display:grid;
       grid-template-columns:1.02fr .98fr;
@@ -122,15 +141,12 @@
       overflow:hidden;
       border:1px solid var(--line);
       box-shadow:var(--shadow);
-      background:
-        linear-gradient(180deg, rgba(5,17,29,.08) 0%, rgba(5,17,29,.72) 100%),
-        url('assets/hero-van.jpg') center/cover;
+      background:url('assets/hero-van.jpg') center/cover no-repeat;
     }
     .heroVisual::before{
       content:"";
       position:absolute;inset:0;
-      background:
-        linear-gradient(180deg, rgba(5,17,29,.08) 0%, rgba(5,17,29,.10) 35%, rgba(5,17,29,.78) 100%);
+      background:linear-gradient(180deg, rgba(5,17,29,.18) 0%, rgba(5,17,29,.18) 30%, rgba(5,17,29,.80) 100%);
       z-index:0;
     }
     .heroBadge{
@@ -143,7 +159,7 @@
     }
     .heroOverlay{
       position:absolute;left:18px;right:18px;bottom:18px;z-index:2;
-      display:grid;grid-template-columns:1.25fr .85fr;gap:14px;
+      display:grid;grid-template-columns:1.2fr .8fr;gap:14px;
       align-items:end;
     }
     .heroCard{
@@ -153,21 +169,21 @@
       border-radius:24px;
       backdrop-filter:blur(10px);
     }
-    .heroCardTop{
-      display:flex;gap:14px;align-items:center;
-    }
-    .miniLogo{
-      width:56px;height:56px;border-radius:18px;
-      background:linear-gradient(135deg,var(--brand),var(--brand2));
-      display:grid;place-items:center;overflow:hidden;flex:none;
-    }
     .heroCard h2{margin:0;font-size:1.2rem}
     .heroCard p{margin:6px 0 0;color:var(--muted)}
-    .heroThumb{
-      display:grid;
-      gap:10px;
+    .stats{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+      margin-top:14px;
     }
-    .heroThumb a{
+    .stat{
+      padding:16px;border-radius:20px;
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line);
+    }
+    .stat b{display:block;font-size:1.05rem}
+    .stat span{color:var(--muted);font-size:.92rem}
+
+    .sinkThumb{
       display:block;
       border-radius:22px;
       overflow:hidden;
@@ -175,9 +191,11 @@
       box-shadow:0 18px 40px rgba(0,0,0,.25);
       cursor:zoom-in;
       background:#0c1b2e;
+      text-decoration:none;
     }
-    .heroThumb img{
+    .sinkThumb img{
       width:100%;
+      display:block;
       aspect-ratio:4/5;
       object-fit:cover;
     }
@@ -187,18 +205,6 @@
       font-size:.92rem;
       color:var(--muted);
     }
-
-    .stats{
-      display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
-      margin-top:14px;
-    }
-    .stat{
-      padding:16px;border-radius:20px;
-      background:rgba(255,255,255,.05);
-      border:1px solid var(--line);
-    }
-    .stat b{display:block;font-size:1.1rem}
-    .stat span{color:var(--muted);font-size:.92rem}
 
     section{padding:22px 0 0}
     .sectionTitle{
@@ -216,9 +222,9 @@
       border-radius:var(--radius);
       box-shadow:var(--shadow);
     }
-    .svc,.aboutCard,.coverageCard,.trustCard,.galleryCard,.contactCard{padding:22px}
-    .svc h3,.aboutCard h3,.coverageCard h3,.trustCard h3,.galleryCard h3,.contactCard h3{margin:.15rem 0 .5rem}
-    .svc p,.aboutCard p,.coverageCard p,.trustCard p,.galleryCard p,.contactCard p{color:var(--muted);margin:0}
+    .svc,.coverageCard,.trustCard,.contactCard{padding:22px}
+    .svc h3,.coverageCard h3,.trustCard h3,.contactCard h3{margin:.15rem 0 .5rem}
+    .svc p,.coverageCard p,.trustCard p,.contactCard p{color:var(--muted);margin:0}
     .icon{
       width:54px;height:54px;border-radius:18px;
       background:rgba(74,163,255,.14);
@@ -226,34 +232,10 @@
       font-size:1.25rem;margin-bottom:14px;
       border:1px solid rgba(255,255,255,.10);
     }
+
     .split{
       display:grid;grid-template-columns:1fr 1fr;gap:16px;
     }
-    .featureStrip{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
-    }
-    .feature{
-      min-height:190px;
-      border-radius:22px;
-      overflow:hidden;
-      position:relative;
-      border:1px solid var(--line);
-      background:#0d2036;
-      box-shadow:var(--shadow);
-    }
-    .feature.one{background:url('assets/bathroom.jpg') center/cover}
-    .feature.two{background:url('assets/sink.jpg') center/cover}
-    .feature.three{background:url('assets/toilet.jpg') center/cover}
-    .feature::after{
-      content:"";
-      position:absolute;inset:0;
-      background:linear-gradient(180deg, transparent 35%, rgba(5,17,29,.82) 100%);
-    }
-    .featureText{
-      position:absolute;left:16px;right:16px;bottom:16px;z-index:1;
-      font-weight:700;
-    }
-
     .coverageList{display:flex;flex-wrap:wrap;gap:10px}
     .tag{
       padding:10px 14px;border-radius:999px;
@@ -337,12 +319,11 @@
     }
 
     @media (max-width: 980px){
-      .heroGrid,.services,.split,.contactGrid,.featureStrip{grid-template-columns:1fr}
+      .heroGrid,.services,.split,.contactGrid{grid-template-columns:1fr}
       .menu{display:none}
-      .stats{grid-template-columns:1fr 1fr}
-      .heroVisual{min-height:560px}
+      .heroVisual{min-height:620px}
       .heroOverlay{grid-template-columns:1fr}
-      .heroThumb{max-width:220px}
+      .stats{grid-template-columns:1fr 1fr}
     }
     @media (max-width: 620px){
       .hero{padding-top:12px}
@@ -350,12 +331,10 @@
       .stats{grid-template-columns:1fr}
       .btn{flex:1;text-align:center}
       .cta{width:100%}
-      .heroVisual{min-height:690px}
+      .heroVisual{min-height:700px}
       .heroOverlay{left:14px;right:14px;bottom:14px}
       .heroCard{padding:18px}
-      .heroThumb{max-width:none}
-      .heroThumb img{aspect-ratio:16/10}
-      .featureStrip{gap:10px}
+      .sinkThumb img{aspect-ratio:16/10}
       .lightbox{padding:14px}
       .close{top:10px;right:10px}
     }
@@ -385,12 +364,12 @@
   <header class="topbar">
     <div class="wrap nav">
       <div class="brand">
-       <div class="logo-wrap">
-  <img src="assets/eagle-heating-and-plumbing-logo.png" alt="Eagle Heating & Plumbing logo" class="site-logo">
-</div> 
-        <div>
+        <div class="logo-wrap">
+          <img src="assets/eagle-heating-and-plumbing-logo.png" alt="Eagle Heating & Plumbing logo" class="site-logo">
+        </div>
+        <div class="brandText">
           <div>Eagle Heating & Plumbing</div>
-          <div style="color:var(--muted);font-size:.92rem;">St Neots & surrounding areas</div>
+          <div>St Neots & surrounding areas</div>
         </div>
       </div>
       <nav class="menu" aria-label="Primary">
@@ -431,26 +410,8 @@
           <div class="heroBadge">St Neots • Trusted local service</div>
           <div class="heroOverlay">
             <div class="heroCard">
-              <div class="heroCardTop">
-                <div class="miniLogo" aria-hidden="true">
-                  <svg class="mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
-                        <stop offset="0" stop-color="#4aa3ff"/>
-                        <stop offset="1" stop-color="#39d5c2"/>
-                      </linearGradient>
-                    </defs>
-                    <rect width="64" height="64" rx="16" fill="url(#g2)"/>
-                    <path d="M12 26c8-8 18-11 20-11s12 3 20 11c-6-2-11-2-16 1 3 2 5 5 6 8-3-2-6-3-10-3s-7 1-10 3c1-3 3-6 6-8-5-3-10-3-16-1Z" fill="#07111e" opacity=".96"/>
-                    <path d="M30 28c2-3 6-4 10-4 4 0 8 1 12 4-3 1-5 3-6 6-2-1-4-2-6-2-3 0-6 1-8 2-1-3-3-5-6-6Z" fill="#07111e"/>
-                    <circle cx="34" cy="29" r="2" fill="#fff"/>
-                  </svg>
-                </div>
-                <div>
-                  <h2>Domestic plumbing & heating</h2>
-                  <p>Clear communication, neat work and a local service people can rely on.</p>
-                </div>
-              </div>
+              <h2>Domestic plumbing & heating</h2>
+              <p>Clear communication, neat work and a local service people can rely on.</p>
               <div class="stats">
                 <div class="stat"><b>St Neots</b><span>Local focus.</span></div>
                 <div class="stat"><b>Gas Safe</b><span>Registered.</span></div>
@@ -459,16 +420,10 @@
               </div>
             </div>
 
-            <div class="heroThumb">
-              <a href="#lightbox-sink" aria-label="Open sink image">
-                <img src="assets/sink.jpg" alt="Sink plumbing work by Eagle Heating & Plumbing">
-                <div class="thumbLabel">Tap and sink work</div>
-              </a>
-              <a href="#lightbox-toilet" aria-label="Open toilet image">
-                <img src="assets/toilet.jpg" alt="Toilet plumbing work by Eagle Heating & Plumbing">
-                <div class="thumbLabel">Toilet and bathroom work</div>
-              </a>
-            </div>
+            <a class="sinkThumb" href="#lightbox-sink" aria-label="Open sink image">
+              <img src="assets/sink.jpg" alt="Sink plumbing work by Eagle Heating & Plumbing">
+              <div class="thumbLabel">Tap and sink work</div>
+            </a>
           </div>
         </aside>
       </div>
@@ -494,14 +449,6 @@
             <p>Fast response for burst pipes, leaks and urgent plumbing problems.</p>
           </article>
         </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap featureStrip">
-        <a class="feature one" href="#lightbox-bathroom" aria-label="Open bathroom image"><div class="featureText">Bathroom work with a clean finish</div></a>
-        <a class="feature two" href="#lightbox-sink" aria-label="Open sink image"><div class="featureText">Sink repairs and everyday plumbing jobs</div></a>
-        <a class="feature three" href="#lightbox-toilet" aria-label="Open toilet image"><div class="featureText">Toilet and sanitaryware work</div></a>
       </div>
     </section>
 
@@ -568,20 +515,6 @@
     <div class="lightboxInner">
       <a class="close" href="#" aria-label="Close image">×</a>
       <img class="lightboxImg" src="assets/sink.jpg" alt="Sink plumbing work by Eagle Heating & Plumbing">
-    </div>
-  </div>
-
-  <div id="lightbox-toilet" class="lightbox" aria-label="Toilet image lightbox">
-    <div class="lightboxInner">
-      <a class="close" href="#" aria-label="Close image">×</a>
-      <img class="lightboxImg" src="assets/toilet.jpg" alt="Toilet plumbing work by Eagle Heating & Plumbing">
-    </div>
-  </div>
-
-  <div id="lightbox-bathroom" class="lightbox" aria-label="Bathroom image lightbox">
-    <div class="lightboxInner">
-      <a class="close" href="#" aria-label="Close image">×</a>
-      <img class="lightboxImg" src="assets/bathroom.jpg" alt="Bathroom plumbing work by Eagle Heating & Plumbing">
     </div>
   </div>
 
