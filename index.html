@@ -6,23 +6,23 @@
   <title>Eagle Heating & Plumbing | St Neots Plumber</title>
   <meta name="description" content="Eagle Heating & Plumbing serves St Neots and surrounding areas with trusted plumbing and heating services. Call 01480 473097." />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
-  <meta name="theme-color" content="#0d3b66" />
+  <meta name="theme-color" content="#0c2c49" />
   <link rel="canonical" href="https://YOURDOMAIN.co.uk/" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#06111e;
-      --panel:#0b1728;
-      --card:#0f2138;
-      --card2:#12304c;
+      --bg:#05111d;
+      --bg2:#09192b;
+      --panel:#0d2036;
+      --card:#10243d;
       --text:#eef5ff;
       --muted:#b7c8df;
       --brand:#4aa3ff;
       --brand2:#39d5c2;
       --line:rgba(255,255,255,.10);
-      --shadow:0 24px 80px rgba(0,0,0,.35);
+      --shadow:0 24px 80px rgba(0,0,0,.38);
       --radius:28px;
     }
     *{box-sizing:border-box}
@@ -31,9 +31,9 @@
       margin:0;
       font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       background:
-        radial-gradient(circle at top, rgba(74,163,255,.18), transparent 34%),
-        radial-gradient(circle at 80% 10%, rgba(57,213,194,.11), transparent 26%),
-        linear-gradient(180deg,#07111e 0%, #06111e 100%);
+        radial-gradient(circle at 15% 0%, rgba(74,163,255,.20), transparent 28%),
+        radial-gradient(circle at 85% 12%, rgba(57,213,194,.12), transparent 22%),
+        linear-gradient(180deg,var(--bg2) 0%, var(--bg) 100%);
       color:var(--text);
       line-height:1.6;
     }
@@ -42,7 +42,7 @@
     .wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}
     .topbar{
       position:sticky;top:0;z-index:40;
-      background:rgba(6,17,30,.82);
+      background:rgba(5,17,29,.86);
       backdrop-filter:blur(16px);
       border-bottom:1px solid var(--line);
     }
@@ -51,15 +51,16 @@
       padding:14px 0;
     }
     .brand{
-      display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px
+      display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px;
     }
     .logo{
-      width:48px;height:48px;border-radius:16px;
+      width:50px;height:50px;border-radius:16px;
       background:linear-gradient(135deg,var(--brand),var(--brand2));
-      display:grid;place-items:center;
       box-shadow:var(--shadow);
-      overflow:hidden;
+      display:grid;place-items:center;overflow:hidden;
+      flex:none;
     }
+    .mark{width:100%;height:100%;display:block}
     .menu{
       display:flex;gap:18px;flex-wrap:wrap;
       color:var(--muted);
@@ -68,18 +69,16 @@
     .cta{display:flex;gap:10px;flex-wrap:wrap}
     .btn{
       padding:12px 18px;border-radius:999px;font-weight:700;
-      border:1px solid var(--line);background:rgba(255,255,255,.04)
+      border:1px solid var(--line);background:rgba(255,255,255,.04);
+      display:inline-flex;align-items:center;justify-content:center;
     }
     .btn.primary{
       background:linear-gradient(135deg,var(--brand),var(--brand2));
-      color:#021019;border:none
+      color:#021019;border:none;
     }
-    .hero{padding:56px 0 28px}
+    .hero{padding:56px 0 24px}
     .heroGrid{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:22px;
-      align-items:stretch;
+      display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:stretch;
     }
     .kicker{
       display:inline-flex;align-items:center;gap:8px;
@@ -90,18 +89,17 @@
       font-size:.92rem;
     }
     h1{
-      font-size:clamp(2.4rem,5vw,5rem);
+      font-size:clamp(2.5rem,5vw,5.2rem);
       line-height:1.02;
       margin:16px 0 14px;
+      letter-spacing:-.03em;
     }
     .lead{
       color:var(--muted);
       font-size:1.08rem;
       max-width:62ch;
     }
-    .pillrow{
-      display:flex;flex-wrap:wrap;gap:10px;margin:22px 0
-    }
+    .pillrow{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 0}
     .pill{
       padding:10px 14px;border-radius:999px;
       background:rgba(255,255,255,.06);
@@ -109,46 +107,61 @@
       color:#dfeaff;
       font-size:.94rem;
     }
-    .heroCard{
-      padding:22px;
-      background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+    .heroVisual{
+      position:relative;
+      min-height:520px;
+      border-radius:34px;
+      overflow:hidden;
+      background:
+        linear-gradient(180deg, rgba(4,10,18,.05), rgba(4,10,18,.55)),
+        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1400&q=80') center/cover;
       border:1px solid var(--line);
-      border-radius:var(--radius);
       box-shadow:var(--shadow);
     }
-    .photo{
-      height:220px;
-      border-radius:22px;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.02), rgba(0,0,0,.35)),
-        url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1200&q=80') center/cover;
-      border:1px solid rgba(255,255,255,.10);
-      position:relative;
-      overflow:hidden;
-    }
-    .photo::after{
-      content:"St Neots • Local service • Trusted workmanship";
-      position:absolute;left:16px;bottom:16px;
-      background:rgba(6,17,30,.78);
-      border:1px solid rgba(255,255,255,.12);
+    .heroBadge{
+      position:absolute;left:18px;top:18px;
       padding:10px 14px;border-radius:999px;
-      font-size:.9rem;color:#eef5ff;
+      background:rgba(5,17,29,.82);
+      border:1px solid rgba(255,255,255,.12);
+      color:#fff;font-weight:700;
     }
+    .heroCard{
+      position:absolute;left:18px;right:18px;bottom:18px;
+      padding:20px;
+      background:rgba(7,17,29,.84);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:24px;
+      backdrop-filter:blur(10px);
+    }
+    .heroCardTop{
+      display:flex;gap:14px;align-items:center;
+    }
+    .miniLogo{
+      width:56px;height:56px;border-radius:18px;
+      background:linear-gradient(135deg,var(--brand),var(--brand2));
+      display:grid;place-items:center;overflow:hidden;flex:none;
+    }
+    .heroCard h2{margin:0;font-size:1.25rem}
+    .heroCard p{margin:6px 0 0;color:var(--muted)}
     .stats{
-      display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px
+      display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
+      margin-top:14px;
     }
     .stat{
-      padding:16px;border-radius:20px;background:rgba(8,17,31,.55);
-      border:1px solid var(--line)
+      padding:16px;border-radius:20px;
+      background:rgba(255,255,255,.05);
+      border:1px solid var(--line);
     }
-    .stat b{display:block;font-size:1.15rem}
+    .stat b{display:block;font-size:1.1rem}
     .stat span{color:var(--muted);font-size:.92rem}
     section{padding:22px 0 0}
     .sectionTitle{
       font-size:1.85rem;margin:0 0 14px;
+      letter-spacing:-.02em;
     }
+    .sectionLead{color:var(--muted);max-width:70ch;margin:0 0 18px}
     .services{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:16px
+      display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
     }
     .card{
       background:linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
@@ -156,44 +169,54 @@
       border-radius:var(--radius);
       box-shadow:var(--shadow);
     }
-    .svc,.aboutCard,.contactCard,.galleryCard,.coverageCard,.trustCard{padding:22px}
-    .svc h3,.aboutCard h3,.contactCard h3,.coverageCard h3,.trustCard h3{margin:.15rem 0 .5rem}
-    .svc p,.aboutCard p,.contactCard p,.coverageCard p,.trustCard p{color:var(--muted);margin:0}
+    .svc,.aboutCard,.coverageCard,.trustCard,.galleryCard,.contactCard{padding:22px}
+    .svc h3,.aboutCard h3,.coverageCard h3,.trustCard h3,.galleryCard h3,.contactCard h3{margin:.15rem 0 .5rem}
+    .svc p,.aboutCard p,.coverageCard p,.trustCard p,.galleryCard p,.contactCard p{color:var(--muted);margin:0}
     .icon{
-      width:52px;height:52px;border-radius:18px;
+      width:54px;height:54px;border-radius:18px;
       background:rgba(74,163,255,.14);
       display:grid;place-items:center;
-      font-size:1.25rem;margin-bottom:14px
+      font-size:1.25rem;margin-bottom:14px;
+      border:1px solid rgba(255,255,255,.10);
     }
     .split{
-      display:grid;grid-template-columns:1fr 1fr;gap:16px
+      display:grid;grid-template-columns:1fr 1fr;gap:16px;
     }
-    .galleryGrid{
-      display:grid;grid-template-columns:repeat(3,1fr);gap:12px
+    .featureStrip{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:12px;
     }
-    .gimg{
-      height:180px;border-radius:20px;overflow:hidden;
-      border:1px solid rgba(255,255,255,.10);
-      background:#10233f;
+    .feature{
+      min-height:190px;
+      border-radius:22px;
+      overflow:hidden;
+      position:relative;
+      border:1px solid var(--line);
+      background:#0d2036;
+      box-shadow:var(--shadow);
     }
-    .gimg.one{background:url('https://images.unsplash.com/photo-1608613304899-ea8098577a08?auto=format&fit=crop&w=1200&q=80') center/cover}
-    .gimg.two{background:url('https://images.unsplash.com/photo-1504313680466-f9c3d61f8f4d?auto=format&fit=crop&w=1200&q=80') center/cover}
-    .gimg.three{background:url('https://images.unsplash.com/photo-1531913764164-9b7b6c0b7b15?auto=format&fit=crop&w=1200&q=80') center/cover}
-    .coverageList{
-      display:flex;flex-wrap:wrap;gap:10px
+    .feature.one{background:url('https://images.unsplash.com/photo-1605281317010-fe5ffe798166?auto=format&fit=crop&w=1200&q=80') center/cover}
+    .feature.two{background:url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=80') center/cover}
+    .feature.three{background:url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=1200&q=80') center/cover}
+    .feature::after{
+      content:"";
+      position:absolute;inset:0;
+      background:linear-gradient(180deg, transparent 35%, rgba(5,17,29,.82) 100%);
     }
+    .featureText{
+      position:absolute;left:16px;right:16px;bottom:16px;z-index:1;
+      font-weight:700;
+    }
+    .coverageList{display:flex;flex-wrap:wrap;gap:10px}
     .tag{
       padding:10px 14px;border-radius:999px;
       background:rgba(255,255,255,.05);
       border:1px solid var(--line);
       color:#dfe9fb;font-size:.94rem
     }
-    .trustList{
-      display:grid;gap:12px
-    }
+    .trustList{display:grid;gap:12px}
     .trustItem{
       padding:14px 16px;border-radius:18px;
-      background:rgba(8,17,31,.46);
+      background:rgba(255,255,255,.05);
       border:1px solid var(--line);
       color:var(--muted)
     }
@@ -208,13 +231,18 @@
       border:1px solid var(--line);
       background:rgba(255,255,255,.04);
       color:var(--text);
-      font:inherit
+      font:inherit;
     }
     textarea.field{min-height:150px;resize:vertical}
-    .small{font-size:.92rem;color:var(--muted)}
+    .darkNote{
+      padding:16px 18px;border-radius:20px;
+      background:rgba(8,17,31,.5);
+      border:1px solid var(--line);
+      color:var(--muted);
+    }
     .stickybar{
       position:fixed;left:0;right:0;bottom:0;z-index:50;
-      background:rgba(6,17,30,.90);
+      background:rgba(5,17,29,.92);
       backdrop-filter:blur(16px);
       border-top:1px solid var(--line);
       padding:10px 0;
@@ -227,16 +255,16 @@
       color:var(--muted);
       font-size:.94rem;
     }
-    .eagleMark{display:block;width:100%;height:100%}
-    @media (max-width: 960px){
-      .heroGrid,.services,.split,.contactGrid{grid-template-columns:1fr}
+    @media (max-width: 980px){
+      .heroGrid,.services,.split,.contactGrid,.featureStrip{grid-template-columns:1fr}
       .menu{display:none}
-      .galleryGrid{grid-template-columns:1fr 1fr}
+      .stats{grid-template-columns:1fr 1fr}
+      .heroVisual{min-height:440px}
     }
     @media (max-width: 620px){
       .hero{padding-top:40px}
-      h1{font-size:2.35rem}
-      .stats,.galleryGrid{grid-template-columns:1fr}
+      h1{font-size:2.4rem}
+      .stats{grid-template-columns:1fr}
       .btn{flex:1;text-align:center}
       .cta{width:100%}
     }
@@ -257,7 +285,6 @@
       "streetAddress":"66 The Crescent",
       "addressLocality":"St Neots",
       "addressRegion":"Cambridgeshire",
-      "postalCode":"",
       "addressCountry":"GB"
     }
   }
@@ -268,7 +295,7 @@
     <div class="wrap nav">
       <div class="brand">
         <div class="logo" aria-hidden="true">
-          <svg class="eagleMark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Eagle logo">
+          <svg class="mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Eagle logo">
             <defs>
               <linearGradient id="g" x1="0" x2="1" y1="0" y2="1">
                 <stop offset="0" stop-color="#4aa3ff"/>
@@ -276,14 +303,14 @@
               </linearGradient>
             </defs>
             <rect width="64" height="64" rx="16" fill="url(#g)"/>
-            <path d="M12 26c8-8 18-11 20-11s12 3 20 11c-6-2-11-2-16 1 3 2 5 5 6 8-3-2-6-3-10-3s-7 1-10 3c1-3 3-6 6-8-5-3-10-3-16-1Z" fill="#07111e" opacity=".95"/>
+            <path d="M12 26c8-8 18-11 20-11s12 3 20 11c-6-2-11-2-16 1 3 2 5 5 6 8-3-2-6-3-10-3s-7 1-10 3c1-3 3-6 6-8-5-3-10-3-16-1Z" fill="#07111e" opacity=".96"/>
             <path d="M30 28c2-3 6-4 10-4 4 0 8 1 12 4-3 1-5 3-6 6-2-1-4-2-6-2-3 0-6 1-8 2-1-3-3-5-6-6Z" fill="#07111e"/>
             <circle cx="34" cy="29" r="2" fill="#fff"/>
           </svg>
         </div>
         <div>
           <div>Eagle Heating & Plumbing</div>
-          <div class="small">St Neots & surrounding areas</div>
+          <div style="color:var(--muted);font-size:.92rem;">St Neots & surrounding areas</div>
         </div>
       </div>
       <nav class="menu" aria-label="Primary">
@@ -306,26 +333,49 @@
       <div class="wrap heroGrid">
         <div>
           <span class="kicker">Gas Safe Reg No. 49160 • Richard Bissett • St Neots</span>
-          <h1>Trusted plumbing and heating for St Neots homes.</h1>
-          <p class="lead">Eagle Heating & Plumbing is a local domestic plumbing and heating company serving St Neots and the surrounding area. Call for help with everyday plumbing, heating issues, boiler-related work and urgent leaks.</p>
+          <h1>Plumbing and heating with a strong local presence.</h1>
+          <p class="lead">Eagle Heating & Plumbing is a St Neots-based domestic plumbing and heating company with a friendly, reliable service and a clean, professional brand.</p>
           <div class="pillrow">
             <span class="pill">Domestic plumbing</span>
             <span class="pill">Heating support</span>
             <span class="pill">Urgent repairs</span>
             <span class="pill">Local service</span>
           </div>
-          <div class="cta">
+          <div class="cta" style="margin-top:22px;">
             <a class="btn primary" href="tel:01480473097">Call 01480 473097</a>
             <a class="btn" href="/contact.html">Request a quote</a>
           </div>
         </div>
-        <aside class="heroCard">
-          <div class="photo" aria-label="Local plumbing business photo"></div>
-          <div class="stats">
-            <div class="stat"><b>St Neots</b><span>Focused local coverage.</span></div>
-            <div class="stat"><b>Gas Safe</b><span>Registered business.</span></div>
-            <div class="stat"><b>Reliable</b><span>Clear, practical service.</span></div>
-            <div class="stat"><b>Friendly</b><span>Local, approachable team.</span></div>
+
+        <aside class="heroVisual">
+          <div class="heroBadge">St Neots • Trusted local service</div>
+          <div class="heroCard">
+            <div class="heroCardTop">
+              <div class="miniLogo" aria-hidden="true">
+                <svg class="mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+                      <stop offset="0" stop-color="#4aa3ff"/>
+                      <stop offset="1" stop-color="#39d5c2"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="64" height="64" rx="16" fill="url(#g2)"/>
+                  <path d="M12 26c8-8 18-11 20-11s12 3 20 11c-6-2-11-2-16 1 3 2 5 5 6 8-3-2-6-3-10-3s-7 1-10 3c1-3 3-6 6-8-5-3-10-3-16-1Z" fill="#07111e" opacity=".96"/>
+                  <path d="M30 28c2-3 6-4 10-4 4 0 8 1 12 4-3 1-5 3-6 6-2-1-4-2-6-2-3 0-6 1-8 2-1-3-3-5-6-6Z" fill="#07111e"/>
+                  <circle cx="34" cy="29" r="2" fill="#fff"/>
+                </svg>
+              </div>
+              <div>
+                <h2>Domestic plumbing & heating</h2>
+                <p>Clear communication, neat work and a local service people can rely on.</p>
+              </div>
+            </div>
+            <div class="stats">
+              <div class="stat"><b>St Neots</b><span>Local focus.</span></div>
+              <div class="stat"><b>Gas Safe</b><span>Registered.</span></div>
+              <div class="stat"><b>Trusted</b><span>Friendly service.</span></div>
+              <div class="stat"><b>Fast</b><span>Practical help.</span></div>
+            </div>
           </div>
         </aside>
       </div>
@@ -334,37 +384,45 @@
     <section>
       <div class="wrap">
         <h2 class="sectionTitle">Services</h2>
+        <p class="sectionLead">A simple, clear set of services that reflects the business properly and keeps the site easy to understand.</p>
         <div class="services">
           <article class="card svc">
             <div class="icon">🔧</div>
             <h3>General plumbing</h3>
-            <p>Leaks, taps, toilets, pipework, overflows and everyday plumbing jobs around the home.</p>
+            <p>Leaks, taps, toilets, pipework, overflows and everyday plumbing jobs at home.</p>
           </article>
           <article class="card svc">
             <div class="icon">🔥</div>
             <h3>Heating support</h3>
-            <p>Heating faults, boiler-related issues and practical help keeping your system running well.</p>
+            <p>Heating faults, boiler-related issues and practical help keeping systems working well.</p>
           </article>
           <article class="card svc">
             <div class="icon">💧</div>
             <h3>Emergency help</h3>
-            <p>Fast response for burst pipes, leaks and urgent problems that need attention quickly.</p>
+            <p>Fast response for burst pipes, leaks and urgent plumbing problems.</p>
           </article>
         </div>
       </div>
     </section>
 
     <section>
+      <div class="wrap featureStrip">
+        <div class="feature one"><div class="featureText">Clean workmanship and local reliability</div></div>
+        <div class="feature two"><div class="featureText">Brand-led design with a strong eagle identity</div></div>
+        <div class="feature three"><div class="featureText">A site that feels like a real business</div></div>
+      </div>
+    </section>
+
+    <section>
       <div class="wrap split">
         <article class="card aboutCard">
-          <h2 class="sectionTitle">About Eagle Heating & Plumbing</h2>
-          <p>Richard Bissett runs Eagle Heating & Plumbing from St Neots, providing a dependable local service for domestic customers. The focus is on tidy work, honest communication and helping people get the problem sorted without fuss.</p>
-          <p class="small">Add your full story, experience and service photos here to strengthen trust even more.</p>
+          <h2 class="sectionTitle">About the business</h2>
+          <p>Richard Bissett runs Eagle Heating & Plumbing as a local domestic plumbing and heating service based in St Neots. The website should feel calm, trusted and confident, with the real business identity leading the experience.</p>
         </article>
         <article class="card coverageCard">
-          <h2 class="sectionTitle">Areas covered</h2>
-          <p>St Neots is the centre of the business, with surrounding local areas covered as needed.</p>
-          <div class="coverageList">
+          <h2 class="sectionTitle">Local coverage</h2>
+          <p>Focused on St Neots and nearby surrounding areas.</p>
+          <div class="coverageList" style="margin-top:14px;">
             <span class="tag">St Neots</span>
             <span class="tag">Eynesbury</span>
             <span class="tag">Little Paxton</span>
@@ -379,21 +437,21 @@
     <section>
       <div class="wrap split">
         <article class="card galleryCard">
-          <h2 class="sectionTitle">Work and vehicles</h2>
-          <div class="galleryGrid">
-            <div class="gimg one"></div>
-            <div class="gimg two"></div>
-            <div class="gimg three"></div>
+          <h2 class="sectionTitle">Gallery</h2>
+          <p class="sectionLead" style="margin-bottom:14px;">Use real photos here when available. Good images will make the site feel much stronger.</p>
+          <div class="featureStrip">
+            <div class="feature one"></div>
+            <div class="feature two"></div>
+            <div class="feature three"></div>
           </div>
-          <p class="small" style="margin-top:12px;">Replace these with real images from the business when ready. This section will make the site feel much more genuine and local.</p>
         </article>
         <article class="card trustCard">
           <h2 class="sectionTitle">Why people choose us</h2>
           <div class="trustList">
-            <div class="trustItem">Gas Safe registered business, with the registration number shown clearly on the site.</div>
-            <div class="trustItem">Local St Neots presence, not a faceless nationwide template.</div>
-            <div class="trustItem">Clear contact details and simple next steps for customers.</div>
-            <div class="trustItem">Brand styling that matches the eagle identity from the existing Facebook page.</div>
+            <div class="trustItem">Gas Safe registered business with the registration number shown clearly.</div>
+            <div class="trustItem">Local St Neots identity, not a generic trade template.</div>
+            <div class="trustItem">Simple contact details and direct call-to-action buttons.</div>
+            <div class="trustItem">Brand styling that matches the eagle theme already in use.</div>
           </div>
         </article>
       </div>
@@ -406,7 +464,7 @@
           <p><strong>Phone:</strong> <a href="tel:01480473097">01480 473097</a></p>
           <p><strong>Email:</strong> <a href="mailto:rjb44.eagle@sky.com">rjb44.eagle@sky.com</a></p>
           <p><strong>Gas Safe:</strong> 49160</p>
-          <p class="small">If you want, I can replace the placeholder images and styling with a version matched to the business card and van photos.</p>
+          <div class="darkNote" style="margin-top:16px;">The design is intentionally more image-led and premium so the site feels less flat and more established.</div>
         </article>
         <article class="card contactCard">
           <h2 class="sectionTitle">Quick enquiry</h2>
@@ -422,16 +480,14 @@
   </main>
 
   <footer>
-    <div class="wrap">
-      © <span id="y"></span> Eagle Heating & Plumbing. St Neots and surrounding areas.
-    </div>
+    <div class="wrap">© <span id="y"></span> Eagle Heating & Plumbing. St Neots and surrounding areas.</div>
   </footer>
 
   <div class="stickybar">
     <div class="wrap stickyInner">
       <a class="btn primary" href="tel:01480473097">Call now</a>
       <a class="btn" href="/contact.html">Contact</a>
-      <a class="btn" href="/gallery.html">View gallery</a>
+      <a class="btn" href="/gallery.html">Gallery</a>
     </div>
   </div>
 
