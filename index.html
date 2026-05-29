@@ -174,7 +174,6 @@
       font-size:1.85rem;margin:0 0 14px;
       letter-spacing:-.02em;
     }
-    .sectionLead{color:var(--muted);max-width:70ch;margin:0 0 18px}
 
     .services{
       display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
@@ -372,8 +371,8 @@
       <div class="wrap heroGrid">
         <div>
           <span class="kicker">Gas Safe Reg No. 49160 • Richard Bissett • St Neots</span>
-          <h1>Plumbing and heating with a strong local presence.</h1>
-          <p class="lead">Eagle Heating & Plumbing is a St Neots-based domestic plumbing and heating company with a friendly, reliable service and a clean, professional brand.</p>
+          <h1>Reliable plumbing and heating for St Neots.</h1>
+          <p class="lead">Gas Safe registered, local to St Neots, and ready to help with leaks, taps, heating faults, and urgent repairs across the surrounding area.</p>
           <div class="pillrow">
             <span class="pill">Domestic plumbing</span>
             <span class="pill">Heating support</span>
@@ -472,12 +471,14 @@
         </article>
         <article class="card contactCard">
           <h2 class="sectionTitle">Quick enquiry</h2>
-          <form>
-            <input class="field" type="text" name="name" placeholder="Your name" />
+          <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <input class="field" type="text" name="name" placeholder="Your name" required />
+            <input class="field" type="email" name="email" placeholder="Your email" required />
             <input class="field" type="tel" name="phone" placeholder="Your phone number" />
-            <textarea class="field" name="message" placeholder="What do you need help with?"></textarea>
+            <textarea class="field" name="message" placeholder="What do you need help with?" required></textarea>
             <button class="btn primary" type="submit" style="margin-top:10px;">Send enquiry</button>
           </form>
+          <p style="color:var(--muted);margin-top:10px;">We’ll reply by email as soon as possible.</p>
         </article>
       </div>
     </section>
