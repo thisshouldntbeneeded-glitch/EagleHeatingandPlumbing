@@ -75,9 +75,9 @@
       background:linear-gradient(135deg,var(--brand),var(--brand2));
       color:#021019;border:none;
     }
-    .hero{padding:24px 0 26px}
+    .hero{padding:18px 0 24px}
     .heroGrid{
-      display:grid;grid-template-columns:1.08fr .92fr;gap:22px;align-items:stretch;
+      display:grid;grid-template-columns:1.02fr .98fr;gap:22px;align-items:stretch;
     }
     .kicker{
       display:inline-flex;align-items:center;gap:8px;
@@ -88,7 +88,7 @@
       font-size:.92rem;
     }
     h1{
-      font-size:clamp(2.5rem,5vw,5.2rem);
+      font-size:clamp(2.4rem,5vw,5.2rem);
       line-height:1.02;
       margin:16px 0 14px;
       letter-spacing:-.03em;
@@ -106,34 +106,38 @@
       color:#dfeaff;
       font-size:.94rem;
     }
-    .heroVisual{
+
+    .heroImageWrap{
       position:relative;
-      min-height:520px;
+      min-height:560px;
       border-radius:34px;
       overflow:hidden;
       border:1px solid var(--line);
       box-shadow:var(--shadow);
       background:
         linear-gradient(180deg, rgba(5,17,29,.10) 0%, rgba(5,17,29,.72) 100%),
-        linear-gradient(135deg, rgba(4,12,22,.36), rgba(4,12,22,.12)),
         url('assets/hero-van.jpg') center/cover;
     }
-    .heroVisual::before{
+    .heroImageWrap::before{
       content:"";
       position:absolute;inset:0;
-      background:linear-gradient(180deg, rgba(5,17,29,.08) 0%, rgba(5,17,29,.10) 40%, rgba(5,17,29,.78) 100%);
+      background:linear-gradient(180deg, rgba(5,17,29,.18) 0%, rgba(5,17,29,.20) 30%, rgba(5,17,29,.78) 100%);
       z-index:0;
     }
     .heroBadge{
       position:absolute;left:18px;top:18px;z-index:2;
       padding:10px 14px;border-radius:999px;
-      background:rgba(5,17,29,.82);
+      background:rgba(5,17,29,.84);
       border:1px solid rgba(255,255,255,.12);
       color:#fff;font-weight:700;
       backdrop-filter:blur(8px);
     }
-    .heroCard{
+    .heroOverlay{
       position:absolute;left:18px;right:18px;bottom:18px;z-index:2;
+      display:grid;grid-template-columns:1fr 160px;gap:14px;
+      align-items:end;
+    }
+    .heroCard{
       padding:20px;
       background:rgba(7,17,29,.86);
       border:1px solid rgba(255,255,255,.12);
@@ -148,8 +152,19 @@
       background:linear-gradient(135deg,var(--brand),var(--brand2));
       display:grid;place-items:center;overflow:hidden;flex:none;
     }
-    .heroCard h2{margin:0;font-size:1.25rem}
+    .heroCard h2{margin:0;font-size:1.2rem}
     .heroCard p{margin:6px 0 0;color:var(--muted)}
+    .heroShot{
+      border-radius:22px;
+      overflow:hidden;
+      aspect-ratio:4/5;
+      border:1px solid rgba(255,255,255,.12);
+      background:
+        linear-gradient(180deg, rgba(5,17,29,.10), rgba(5,17,29,.45)),
+        url('assets/sink.jpg') center/cover;
+      box-shadow:0 18px 40px rgba(0,0,0,.25);
+    }
+
     .stats{
       display:grid;grid-template-columns:repeat(4,1fr);gap:12px;
       margin-top:14px;
@@ -161,12 +176,14 @@
     }
     .stat b{display:block;font-size:1.1rem}
     .stat span{color:var(--muted);font-size:.92rem}
+
     section{padding:22px 0 0}
     .sectionTitle{
       font-size:1.85rem;margin:0 0 14px;
       letter-spacing:-.02em;
     }
     .sectionLead{color:var(--muted);max-width:70ch;margin:0 0 18px}
+
     .services{
       display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
     }
@@ -201,9 +218,9 @@
       background:#0d2036;
       box-shadow:var(--shadow);
     }
-    .feature.one{background:url('assets/work-1.jpg') center/cover}
-    .feature.two{background:url('assets/work-2.jpg') center/cover}
-    .feature.three{background:url('assets/work-3.jpg') center/cover}
+    .feature.one{background:url('assets/bathroom.jpg') center/cover}
+    .feature.two{background:url('assets/sink.jpg') center/cover}
+    .feature.three{background:url('assets/toilet.jpg') center/cover}
     .feature::after{
       content:"";
       position:absolute;inset:0;
@@ -213,6 +230,7 @@
       position:absolute;left:16px;right:16px;bottom:16px;z-index:1;
       font-weight:700;
     }
+
     .coverageList{display:flex;flex-wrap:wrap;gap:10px}
     .tag{
       padding:10px 14px;border-radius:999px;
@@ -256,20 +274,46 @@
       color:var(--muted);
       font-size:.94rem;
     }
+
     @media (max-width: 980px){
       .heroGrid,.services,.split,.contactGrid,.featureStrip{grid-template-columns:1fr}
       .menu{display:none}
       .stats{grid-template-columns:1fr 1fr}
-      .heroVisual{min-height:440px}
+      .heroImageWrap{min-height:520px}
+      .heroOverlay{grid-template-columns:1fr}
+      .heroShot{max-width:180px;display:none}
     }
     @media (max-width: 620px){
-      .hero{padding-top:16px}
-      h1{font-size:2.4rem}
+      .hero{padding-top:12px}
+      h1{font-size:2.3rem}
       .stats{grid-template-columns:1fr}
       .btn{flex:1;text-align:center}
       .cta{width:100%}
+      .heroImageWrap{min-height:600px}
+      .heroOverlay{left:14px;right:14px;bottom:14px}
+      .heroCard{padding:18px}
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Plumber",
+    "name":"Eagle Heating & Plumbing",
+    "telephone":"+441480473097",
+    "email":"rjb44.eagle@sky.com",
+    "url":"https://YOURDOMAIN.co.uk/",
+    "priceRange":"££",
+    "areaServed":["St Neots","Cambridgeshire","Huntingdonshire"],
+    "description":"Domestic plumbing and heating company serving St Neots and surrounding areas.",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"66 The Crescent",
+      "addressLocality":"St Neots",
+      "addressRegion":"Cambridgeshire",
+      "addressCountry":"GB"
+    }
+  }
+  </script>
 </head>
 <body>
   <header class="topbar">
@@ -328,35 +372,38 @@
           </div>
         </div>
 
-        <aside class="heroVisual">
+        <aside class="heroImageWrap">
           <div class="heroBadge">St Neots • Trusted local service</div>
-          <div class="heroCard">
-            <div class="heroCardTop">
-              <div class="miniLogo" aria-hidden="true">
-                <svg class="mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
-                      <stop offset="0" stop-color="#4aa3ff"/>
-                      <stop offset="1" stop-color="#39d5c2"/>
-                    </linearGradient>
-                  </defs>
-                  <rect width="64" height="64" rx="16" fill="url(#g2)"/>
-                  <path d="M12 26c8-8 18-11 20-11s12 3 20 11c-6-2-11-2-16 1 3 2 5 5 6 8-3-2-6-3-10-3s-7 1-10 3c1-3 3-6 6-8-5-3-10-3-16-1Z" fill="#07111e" opacity=".96"/>
-                  <path d="M30 28c2-3 6-4 10-4 4 0 8 1 12 4-3 1-5 3-6 6-2-1-4-2-6-2-3 0-6 1-8 2-1-3-3-5-6-6Z" fill="#07111e"/>
-                  <circle cx="34" cy="29" r="2" fill="#fff"/>
-                </svg>
+          <div class="heroOverlay">
+            <div class="heroCard">
+              <div class="heroCardTop">
+                <div class="miniLogo" aria-hidden="true">
+                  <svg class="mark" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                      <linearGradient id="g2" x1="0" x2="1" y1="0" y2="1">
+                        <stop offset="0" stop-color="#4aa3ff"/>
+                        <stop offset="1" stop-color="#39d5c2"/>
+                      </linearGradient>
+                    </defs>
+                    <rect width="64" height="64" rx="16" fill="url(#g2)"/>
+                    <path d="M12 26c8-8 18-11 20-11s12 3 20 11c-6-2-11-2-16 1 3 2 5 5 6 8-3-2-6-3-10-3s-7 1-10 3c1-3 3-6 6-8-5-3-10-3-16-1Z" fill="#07111e" opacity=".96"/>
+                    <path d="M30 28c2-3 6-4 10-4 4 0 8 1 12 4-3 1-5 3-6 6-2-1-4-2-6-2-3 0-6 1-8 2-1-3-3-5-6-6Z" fill="#07111e"/>
+                    <circle cx="34" cy="29" r="2" fill="#fff"/>
+                  </svg>
+                </div>
+                <div>
+                  <h2>Domestic plumbing & heating</h2>
+                  <p>Clear communication, neat work and a local service people can rely on.</p>
+                </div>
               </div>
-              <div>
-                <h2>Domestic plumbing & heating</h2>
-                <p>Clear communication, neat work and a local service people can rely on.</p>
+              <div class="stats">
+                <div class="stat"><b>St Neots</b><span>Local focus.</span></div>
+                <div class="stat"><b>Gas Safe</b><span>Registered.</span></div>
+                <div class="stat"><b>Trusted</b><span>Friendly service.</span></div>
+                <div class="stat"><b>Fast</b><span>Practical help.</span></div>
               </div>
             </div>
-            <div class="stats">
-              <div class="stat"><b>St Neots</b><span>Local focus.</span></div>
-              <div class="stat"><b>Gas Safe</b><span>Registered.</span></div>
-              <div class="stat"><b>Trusted</b><span>Friendly service.</span></div>
-              <div class="stat"><b>Fast</b><span>Practical help.</span></div>
-            </div>
+            <div class="heroShot" aria-label="Featured plumbing image"></div>
           </div>
         </aside>
       </div>
@@ -387,9 +434,9 @@
 
     <section>
       <div class="wrap featureStrip">
-        <div class="feature one"><div class="featureText">Professional van branding that builds trust</div></div>
-        <div class="feature two"><div class="featureText">A real local business, not a stock template</div></div>
-        <div class="feature three"><div class="featureText">Strong visual identity with eagle branding</div></div>
+        <div class="feature one"><div class="featureText">Bathroom work with a clean finish</div></div>
+        <div class="feature two"><div class="featureText">Sink repairs and everyday plumbing jobs</div></div>
+        <div class="feature three"><div class="featureText">Toilet and sanitaryware work</div></div>
       </div>
     </section>
 
